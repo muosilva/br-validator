@@ -1,12 +1,13 @@
 package validator
 
 import (
-	"regexp"
 	"strings"
+
+	utils "github.com/muosilva/br-validator/pkg"
 )
 
 func IsValidCPF(cpf string) bool {
-	cpf = RemoveNonDigits(cpf)
+	cpf = utils.RemoveNonDigits(cpf)
 
 	if len(cpf) != 11 {
 		return false
@@ -17,11 +18,6 @@ func IsValidCPF(cpf string) bool {
 	}
 
 	return validateCheckDigits(cpf)
-}
-
-func RemoveNonDigits(input string) string {
-	reg, _ := regexp.Compile(`\D`)
-	return reg.ReplaceAllString(input, "")
 }
 
 func validateCheckDigits(cpf string) bool {
