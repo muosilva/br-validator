@@ -7,7 +7,7 @@ O `br-validator` é uma biblioteca em Go para validação de documentos brasilei
 Para instalar o `br-validator`, você pode usar o comando `go get`:
 
 ```bash
-go get github.com/seu-usuario/br-validator
+go get github.com/muosilva/br-validator
 ```
 
 ## Uso
@@ -18,14 +18,14 @@ package main
 
 import (
     "fmt"
-    "github.com/seu-usuario/br-validator"
+    "github.com/muosilva/br-validator"
 )
 
 func main() {
     cpf := "123.456.789-09"
-    isValid := brvalidator.ValidarCPF(cpf)
+    isValid := brvalidator.IsValidCPF(cpf)
 
-    fmt.Printf("O CPF %s é válido? %v\n", cpf, isValid)
+    fmt.Printf("O CPF %s é válido? %v\n", cpf, isValidCPF)
 }
 ```
 
