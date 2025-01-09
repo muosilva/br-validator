@@ -1,27 +1,32 @@
 # br-validator
 
 ## Descrição
-O `br-validator` é uma biblioteca para validação de documentos brasileiros como CPF, CNPJ, e outros. Ele fornece funções simples e eficientes para garantir que os documentos estejam no formato correto e sejam válidos.
+O `br-validator` é uma biblioteca em Go para validação de documentos brasileiros como CPF, CNPJ, e outros. Ele fornece funções simples e eficientes para garantir que os documentos estejam no formato correto e sejam válidos.
 
 ## Instalação
-Para instalar o `br-validator`, você pode usar o npm ou yarn:
+Para instalar o `br-validator`, você pode usar o comando `go get`:
 
 ```bash
-npm install br-validator
-# ou
-yarn add br-validator
+go get github.com/seu-usuario/br-validator
 ```
 
 ## Uso
 Aqui está um exemplo de como usar o `br-validator` para validar um CPF:
 
-```javascript
-const { validarCPF } = require('br-validator');
+```go
+package main
 
-const cpf = '123.456.789-09';
-const isValid = validarCPF(cpf);
+import (
+    "fmt"
+    "github.com/seu-usuario/br-validator"
+)
 
-console.log(`O CPF ${cpf} é válido? ${isValid}`);
+func main() {
+    cpf := "123.456.789-09"
+    isValid := brvalidator.ValidarCPF(cpf)
+
+    fmt.Printf("O CPF %s é válido? %v\n", cpf, isValid)
+}
 ```
 
 ## Contribuição
